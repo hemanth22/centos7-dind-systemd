@@ -1,5 +1,5 @@
-FROM centos:centos7
-MAINTAINER   webts
+FROM centos:centos7.6.1810
+MAINTAINER bitroid
 ENV container docker
 RUN yum -y swap -- remove fakesystemd -- install systemd systemd-libs
 RUN yum -y update; yum clean all; \
