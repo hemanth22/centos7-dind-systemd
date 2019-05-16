@@ -22,5 +22,6 @@ RUN chmod +x /usr/local/bin/wrapdocker
 
 ADD wrapdocker.service /etc/systemd/system/wrapdocker.service
 RUN systemctl enable wrapdocker.service
+CMD systemctl start wrapdocker.service
 
 ENTRYPOINT ["/usr/sbin/init"]
