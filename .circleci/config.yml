@@ -29,7 +29,7 @@ jobs:
           command: docker images
       - run:
           name: Testing the image.
-          command: docker run -d --privileged centos_centos7-dind-systemd
+          command: docker run -d --privileged centos7-dind-systemd_centos
       - run:
           name: waiting untill container get ready.
           command: sleep 60
@@ -46,7 +46,7 @@ jobs:
       - checkout
       - run:
           name: Trigger build in docker hub.
-          command: $HUB_DOCKER_TRIGGER
+          command: HUB_DOCKER_TRIGGER
 
 workflows:
   version: 2
