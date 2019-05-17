@@ -35,10 +35,10 @@ jobs:
           command: sleep 60
       - run:
           name: Pull test.
-          command: docker exec -it -u root $(docker ps -aq) -c "docker pull centos:7"
+          command: docker exec -it --user root $(docker ps -aq) /bin/bash -c "docker pull centos:7"
       - run:
           name: Verify the pull test.
-          command: docker exec -it -u root $(docker ps -aq) -c "docker images"
+          command: docker exec -it --user root $(docker ps -aq) /bin/bash -c "docker images"
   deploy:
     machine:
       enabled: true
