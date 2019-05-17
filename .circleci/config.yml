@@ -40,6 +40,9 @@ jobs:
           name: Enable DinD.
           command: docker exec -it --user root $(docker ps -aq) /bin/bash -c "systemctl enable docker"
       - run:
+          name: Enable DinD.
+          command: docker exec -it --user root $(docker ps -aq) /bin/bash -c "systemctl start docker"
+      - run:
           name: Pull test.
           command: docker exec -it --user root $(docker ps -aq) /bin/bash -c "docker pull centos:7"
       - run:
