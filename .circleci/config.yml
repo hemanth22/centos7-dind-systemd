@@ -29,7 +29,7 @@ jobs:
           command: docker images
       - run:
           name: Testing the image.
-          command: docker run -d --privileged centos7-dind-systemd_centos
+          command: docker run -d --privileged app_jenkins
       - run:
           name: waiting untill container get ready.
           command: sleep 60
